@@ -1,5 +1,6 @@
 //swiper
 const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
     loop: true,
     speed: 30000,
     allowTouchMove: true,

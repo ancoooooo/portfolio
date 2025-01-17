@@ -59,6 +59,8 @@
     }
 }
 
+
+//swiper
 .swiper-slide {
     width: 30%;
     height: auto;
@@ -206,7 +208,12 @@
 //コピーライト
 .c_copyright {
     display: block;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
     text-align: center;
+    margin: 20px 0 30px 0;
 }
 
 //works詳細ページ　レイアウト
@@ -216,7 +223,11 @@
 
     &__text {
         padding-right: 20px;
-        &List{
+        @include desktop {
+            height: 100vh;
+        }
+
+        &List {
             width: 50%;
             min-width: 300px;
             margin: 0 auto;
@@ -225,22 +236,29 @@
         &Container {
             margin: 0 auto 10px;
             margin-bottom: 10px;
-            
-            dt{
+
+            dt {
                 margin-bottom: 5px;
             }
 
-            dd{
+            dd {
                 line-height: 1.5rem;
             }
         }
     }
+
     &__img {
+
+        @include desktop {
+            margin-top: 200px;
+            margin-bottom: 60px;
+        }
 
 
         img {
             display: block;
             margin: 0 auto;
+            
             width: 50%;
             min-width: 300px;
         }
@@ -261,7 +279,7 @@
             height: 100vh;
 
             &List {
-                margin:30px 0 0 0;  
+                margin: 30px 0 0 0;
             }
 
             &Container {
@@ -288,16 +306,16 @@
     }
 }
 
-.c_border{
+.c_border {
     border: 2px solid $gray;
     border-radius: 5px;
 }
 
 
 //keio stationのみのレイアウト
-.c_keioImg{
+.c_keioImg {
     display: block;
-margin: 0 auto;
+    margin: 0 auto;
 }
 
 .l_keioSection {
@@ -306,7 +324,8 @@ margin: 0 auto;
 
     &__text {
         padding-right: 20px;
-        &List{
+
+        &List {
             width: 50%;
             min-width: 300px;
             margin: 0 auto;
@@ -315,13 +334,54 @@ margin: 0 auto;
         &Container {
             margin: 0 auto 10px;
             margin-bottom: 10px;
-            
-            dt{
+
+            dt {
                 margin-bottom: 5px;
             }
 
-            dd{
+            dd {
                 line-height: 1.5rem;
             }
         }
-    }}
+    }
+}
+
+//上部固定
+//ロゴ
+.c_fixed {
+    @include desktop {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    &__topSpace {
+
+        text-align: center;
+
+        @include desktop {
+            margin-top: 200px;
+            text-align: left;
+        }
+    }
+}
+
+.c_fixed__topSpace-keio {
+    @include desktop {
+        margin-top: 200px;
+    }
+}
+
+//hover設定
+.c_hover{
+    &:hover{
+        opacity: 0.5;
+    }
+}
+
+
+.c_othersPageImg__item{
+    border-radius: 10px;
+    border: 2px solid $gray;
+}

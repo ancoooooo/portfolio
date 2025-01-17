@@ -311,7 +311,12 @@ legend {
 
 .c_copyright {
   display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
   text-align: center;
+  margin: 20px 0 30px 0;
 }
 
 .l_section {
@@ -319,6 +324,11 @@ legend {
 }
 .l_section__text {
   padding-right: 20px;
+}
+@media (min-width: 1000px) {
+  .l_section__text {
+    height: 100vh;
+  }
 }
 .l_section__textList {
   width: 50%;
@@ -334,6 +344,12 @@ legend {
 }
 .l_section__textContainer dd {
   line-height: 1.5rem;
+}
+@media (min-width: 1000px) {
+  .l_section__img {
+    margin-top: 200px;
+    margin-bottom: 60px;
+  }
 }
 .l_section__img img {
   display: block;
@@ -410,6 +426,38 @@ legend {
 }
 .l_keioSection__textContainer dd {
   line-height: 1.5rem;
+}
+
+@media (min-width: 1000px) {
+  .c_fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+.c_fixed__topSpace {
+  text-align: center;
+}
+@media (min-width: 1000px) {
+  .c_fixed__topSpace {
+    margin-top: 200px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1000px) {
+  .c_fixed__topSpace-keio {
+    margin-top: 200px;
+  }
+}
+
+.c_hover:hover {
+  opacity: 0.5;
+}
+
+.c_othersPageImg__item {
+  border-radius: 10px;
+  border: 2px solid #D9D9D9;
 }
 
 .fadeIn {
