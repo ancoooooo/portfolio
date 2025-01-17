@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akiko Kobara portfolio</title>
     <!-- favicon -->
-    <link rel="icon" href="">
+    <link rel="icon" href="img/ancodesign.webp">
     <!-- 電話番号検知無効化 -->
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="ポートフォリオ">
@@ -25,31 +25,29 @@
 
 <body>
     <header class="l_header">
-        <div class="l_header__container">
-            <h1 class="l_header__mainTitle">AKIKO KOBARA<br>Portfolio</h1>
-            <nav class="l_header__nav">
-                <ul class="l_header__navList c_nav">
-                    <li class="l_header__navItem c_nav__item"><a class="c_navItem__link" href="#">Home<span
-                                class="c_nav__circle"></span></a></li>
-                    <li class="l_header__navItem c_nav__item"><a class="c_navItem__link" href="works.html">Works<span
-                                class="c_nav__circle"></span></a></li>
-                    <li class="l_header__navItem c_nav__item"><a class="c_navItem__link" href="">About<span
-                                class="c_nav__circle"></span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <button class="c_hamburger"><span class="c_hamburger__btn"></span></button>
+          <div class="l_header__container">
+              <h1 class="l_header__mainTitle">AKIKO KOBARA<br>Portfolio</h1>
+              <nav class="l_header__nav">
+                  <ul class="l_header__navList c_nav">
+                      <li class="l_header__navItem c_nav__item"><a class="c_nav__itemLink" href="index.html">Home<span class="c_nav__circle"></span></a></li>
+                      <li class="l_header__navItem c_nav__item"><a class="c_nav__itemLink" href="works.html">Works<span class="c_nav__circle"></span></a></li>
+                      <li class="l_header__navItem c_nav__item"><a class="c_nav__itemLink" href="about.html">About<span class="c_nav__circle"></span></a></li>
+                  </ul>
+              </nav>
+          </div>
+      </header>
     <main>
         <h2 class="l_subTitle">About</h2>
         <section class="c_section">
-            <div class="c_section__container c_flex">
-                <img class="e_imgSize300" src="img/about.webp" alt="">
+            <div class="c_section__container c_flex c_about">
+                <img class="e_imgSize300 c_section__aboutImg" src="img/about.webp" alt="プロフィール写真">
                 <ul class="c_section__profileList">
                     <li class="c_section__text">・anco</li>
                     <li class="c_section__text">・東京生まれ、東京在住。</li>
                     <li class="c_section__text">・武蔵野美術大学卒業、沖縄県立芸術大学院デザイン専攻修了</li>
-                    <li class="c_section__text">・イラストレーター、刺繍デザイナー、webデザイナーとして活動</li>
-                    <div class="c_flex">
+                    <li class="c_section__text">・イラストレーター、webデザイナーとして活動</li>
+                    <div class="c_flex__second">
                         <li class="c_section__text ">・資格：</li>
                         <ul class="c_section__textList c_list">
                             <li class="c_list__text">学芸員</li>

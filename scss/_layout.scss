@@ -23,52 +23,203 @@
         justify-content: center;
         gap: 20px;
     }
+
+    &__second {
+        display: flex;
+        gap: 0px;
+        justify-content: start;
+        margin: 0;
+    }
+
+    &__sp{
+        @include touch {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+
 }
+
 
 //nav
 .l_header {
     &__mainTitle {
         margin: 30px 50px;
         @include fz(48);
+        color: $black;
+
     }
 }
 
 .c_nav {
-    position: fixed;
-    top: 50px;
-    right: 10px;
-    z-index: 2000;
+    @include touch {
+        display: none;
 
-    &__item {
-        text-align: right;
+        @at-root body.is-openMenu {
+
+            .l_header__mainTitle {
+                color: $white;
+                z-index: 3000;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .c_nav {
+
+
+                position: fixed;
+                background-color: $gray;
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 500;
+
+                &__itemLink {
+                    display: block;
+                    text-align: center;
+                    padding: 10px 15px;
+                    margin: 10px 0;
+                    @include fz(20);
+                    @include font-webfont_noto;
+                }
+            }
+        }
     }
 
-    &__circle {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 2px solid $black;
-        margin: 10px;
-        vertical-align: middle;
+    @include desktop {
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        z-index: 2000;
 
-        &:hover {
-            background-color: $black;
+        &__item {
+            text-align: right;
+            @include fz(16);
+            @include font-webfont_noto;
+        }
+
+
+
+        &__circle {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid $black;
+            margin: 10px;
+            vertical-align: middle;
+
+            &:hover {
+                background-color: $black;
+            }
+
+        }
+    }
+}
+
+//ハンバーガーメニュー
+.c_hamburger {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    border: none;
+
+    width: 80px;
+    height: 80px;
+    z-index: 600;
+    right: 0;
+
+    &__btn {
+        position: relative;
+        width: 40px;
+        height: 3px;
+        background-color: $gray;
+        border-radius: 30px;
+
+        display: block;
+        margin: 0 auto;
+        transition: all .3s;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: $gray;
+            border-radius: 30px;
+            display: block;
+            margin: 0 auto;
+            transition: all .3s;
+        }
+
+        &::before {
+            top: 10px;
+        }
+
+        &::after {
+            top: -10px;
         }
 
     }
+
+    @at-root body.is-openMenu {
+
+        .c_hamburger {
+            z-index: 1000;
+
+            &__btn {
+                background-color: transparent;
+
+                &::before,
+                &::after {
+                    background-color: $white;
+                    border-radius: 30px;
+
+                    top: 0;
+                }
+
+                &::before {
+                    // transform: rotate(45deg);
+                    rotate: 45deg;
+                }
+
+                &::after {
+                    // transform: rotate(-45deg);
+                    rotate: -45deg;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        display: none;
+    }
 }
+
 
 
 //swiper
-.swiper-slide {
-    width: 30%;
-    height: auto;
-}
 
 .swiper-wrapper {
     transition-timing-function: linear;
-    display: flex;
+    margin-top: 100px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 // タブデザイン
@@ -223,6 +374,7 @@
 
     &__text {
         padding-right: 20px;
+
         @include desktop {
             height: 100vh;
         }
@@ -236,10 +388,6 @@
         &Container {
             margin: 0 auto 10px;
             margin-bottom: 10px;
-
-            dt {
-                margin-bottom: 5px;
-            }
 
             dd {
                 line-height: 1.5rem;
@@ -258,7 +406,7 @@
         img {
             display: block;
             margin: 0 auto;
-            
+
             width: 50%;
             min-width: 300px;
         }
@@ -335,10 +483,6 @@
             margin: 0 auto 10px;
             margin-bottom: 10px;
 
-            dt {
-                margin-bottom: 5px;
-            }
-
             dd {
                 line-height: 1.5rem;
             }
@@ -360,28 +504,67 @@
 
         text-align: center;
 
+        //subタイトルの固定
         @include desktop {
             margin-top: 200px;
             text-align: left;
+
+            &-nappa {
+                margin-top: 170px;
+            }
+
+            &-keio {
+                margin-top: 200px;
+            }
         }
     }
 }
 
-.c_fixed__topSpace-keio {
-    @include desktop {
-        margin-top: 200px;
-    }
-}
-
 //hover設定
-.c_hover{
-    &:hover{
+.c_hover {
+    &:hover {
         opacity: 0.5;
     }
 }
 
-
-.c_othersPageImg__item{
+//個別ページの画像
+.c_othersPageImg__item {
     border-radius: 10px;
     border: 2px solid $gray;
+}
+
+//nappaのテキストスクロール
+.e_text__scroll {
+    @include desktop {
+        font-size: 16px;
+        height: 350px;
+        /* スクロール範囲の高さを指定 */
+        overflow-y: scroll;
+        /* 垂直方向のスクロールを有効にする */
+    }
+}
+
+//aboutページ
+
+.c_section {
+    @include touch {
+        &__aboutImg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &__profileList {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.c_list {
+    margin-top: 2pxx;
+    margin-bottom: 2px;
+
+    &__text {
+        line-height: 1.5rem;
+    }
 }

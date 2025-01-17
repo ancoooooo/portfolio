@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akiko Kobara portfolio</title>
     <!-- favicon -->
-    <link rel="icon" href="">
+    <link rel="icon" href="img/ancodesign.webp">
     <!-- 電話番号検知無効化 -->
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="ポートフォリオ">
@@ -25,15 +25,16 @@
 
 <body>
     <header class="l_header">
+        <button class="c_hamburger"><span class="c_hamburger__btn"></span></button>
         <div class="l_header__container">
-            <h1 class="l_header__mainTitle"><a href="index.html">AKIKO KOBARA<br>Portfolio</a></h1>
+            <h1 class="l_header__mainTitle">AKIKO KOBARA<br>Portfolio</h1>
             <nav class="l_header__nav">
                 <ul class="l_header__navList c_nav">
-                    <li class="l_header__navItem c_nav__item"><a class="c_navItem__link" href="index.html">Home<span
+                    <li class="l_header__navItem c_nav__item"><a class="c_nav__itemLink" href="index.html">Home<span
                                 class="c_nav__circle"></span></a></li>
-                    <li class="l_header__navItem c_nav__item"><a class="c_navItem__link" href="works.html">Works<span
+                    <li class="l_header__navItem c_nav__item"><a class="c_nav__itemLink" href="works.html">Works<span
                                 class="c_nav__circle"></span></a></li>
-                    <li class="l_header__navItem c_nav__item"><a class="c_navItem__link" href="about.html">About<span
+                    <li class="l_header__navItem c_nav__item"><a class="c_nav__itemLink" href="about.html">About<span
                                 class="c_nav__circle"></span></a></li>
                 </ul>
             </nav>
@@ -59,42 +60,44 @@
                     <div class="c_illust__relative">
                         <img src="img/graphic/ancodesign.webp" alt="">
                         <div class="c_illust__mask">
-                            <p class="c_illust__maskText">イラストデザイン事務所制作</p>
+                            <p class="c_illust__maskText">イラストデザイン事務所</p>
                         </div>
                     </div>
+                </a>
 
-                    <a href="nappa.html">
-                        <div class="c_illust__relative">
-                            <img src="img/graphic/nappa.webp" alt="">
-                            <div class="c_illust__mask">
-                                <p class="c_illust__maskText">カフェサイト制作</p>
-                            </div>
+                <a href="nappa.html">
+                    <div class="c_illust__relative">
+                        <img src="img/graphic/nappa.webp" alt="">
+                        <div class="c_illust__mask">
+                            <p class="c_illust__maskText">カフェサイト</p>
                         </div>
+                    </div>
+                </a>
 
-                        <a href="yamanobori.html">
-                            <div class="c_illust__relative">
-                                <img src="img/web/yamanoborilogo.jpg" alt="">
-                                <div class="c_illust__mask">
-                                    <p class="c_illust__maskText">山登り初級サイト制作</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="keiostations.html">
-                            <div class="c_illust__relative">
-                                <img src="img/web/keiostation.jpg" alt="">
-                                <div class="c_illust__mask">
-                                    <p class="c_illust__maskText">京王線 停まる駅アプリケーション</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="todo.html">
-                            <div class="c_illust__relative">
-                                <img src="img/web/todo_app.jpg" alt="">
-                                <div class="c_illust__mask">
-                                    <p class="c_illust__maskText">練習TODOアプリケーション</p>
-                                </div>
-                            </div>
-                        </a>
+                <a href="yamanobori.html">
+                    <div class="c_illust__relative">
+                        <img src="img/web/yamanoborilogo.jpg" alt="">
+                        <div class="c_illust__mask">
+                            <p class="c_illust__maskText">山登り初級サイト</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="keiostations.html">
+                    <div class="c_illust__relative">
+                        <img src="img/web/keiostation.jpg" alt="">
+                        <div class="c_illust__mask">
+                            <p class="c_illust__maskText">京王線 停まる駅アプリケーション</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="todo.html">
+                    <div class="c_illust__relative">
+                        <img src="img/web/todo_app.jpg" alt="">
+                        <div class="c_illust__mask">
+                            <p class="c_illust__maskText">練習TODOアプリケーション</p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div id="content02" class="content_node--inner c_works__grid">
                 <div class="c_illust__relative">
@@ -124,13 +127,13 @@
                 <div class="c_illust__relative">
                     <img src="img/graphic/着付け教室.jpg" alt="">
                     <div class="c_illust__mask">
-                        <p class="c_illust__maskText">バナー</p>
+                        <p class="c_illust__maskText">banner</p>
                     </div>
                 </div>
                 <div class="c_illust__relative">
                     <img src="img/graphic/summersale.jpg" alt="">
                     <div class="c_illust__mask">
-                        <p class="c_illust__maskText">バナー</p>
+                        <p class="c_illust__maskText">banner</p>
                     </div>
                 </div>
             </div>
@@ -141,137 +144,138 @@
                         <p class="c_illust__maskText">星降る夜に</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/boyandbear.jpg" alt=""></a>
+                <div class="c_illust__relative">
+                    <img class="c_illust__img" src="img/illust/boyandbear.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">パッケージに使用</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/tsudoi.JPG" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/tsudoi.JPG" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">マルシェのイラスト</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/girltiger.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/girltiger.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">トラと女の子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/araiguma.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/araiguma.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">アライグマの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/autumn.JPG" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/autumn.JPG" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">企画展イメージグラフィック</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/animals.JPG" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/animals.JPG" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">美術館キャプションボード</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/momonga-icon.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/momonga-icon.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">モモンガのアイコン</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/baku.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/baku.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">バグの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/bear.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/bear.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">クマの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/book.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/book.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">BOOK</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/bouquet.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/bouquet.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">Bouquet</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/cookingrisu.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/cookingrisu.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">お菓子屋さんlogo</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/foodcat.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/foodcat.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">冊子の挿絵</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/image1.JPG" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/image1.JPG" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">イベントイメージ画</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/kawauso.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/kawauso.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">カワウソの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/koala.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/koala.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">コアラの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/konohazuku.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/konohazuku.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">コノハズクの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/kounotori.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/kounotori.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">コウノトリの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/kouyourisu1.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/kouyourisu1.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">Autumn</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/langur.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/langur.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ラングールの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/namakemono.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/namakemono.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ナマケモノの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/raicho.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/raicho.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ライチョウの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/sheep.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/sheep.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ヒツジの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/staycat.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/staycat.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">冊子の挿絵</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/swan.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/swan.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ハクチョウの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/uzura.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/uzura.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ウズラの親子</p>
                     </div>
                 </div>
-                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/zou.jpg" alt=""></a>
+                <div class="c_illust__relative"><img class="c_illust__img" src="img/illust/zou.jpg" alt="">
                     <div class="c_illust__mask">
                         <p class="c_illust__maskText">ゾウの親子</p>
                     </div>

@@ -1,11 +1,12 @@
 //swiper
 const swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
+    slidesPerView: 6,
     loop: true,
-    speed: 30000,
+    speed: 5000,
     allowTouchMove: true,
     autoplay: {
         delay: 0,
+        disableOnInteraction: false,
     },
 });
 
@@ -61,3 +62,15 @@ if($('.' + tabSwitchTab).length) {
 }
 
 // alert('hello');
+
+
+//ハンバーガーメニュー　class名：is-openMenu
+$(function () {
+  $('.c_hamburger').on('click', () => {
+    $('body').toggleClass('is-openMenu');
+  })
+
+  $('.l_header__navList').click(function () {
+    $('body').removeClass('is-openMenu');
+  });
+})

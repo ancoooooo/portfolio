@@ -148,43 +148,160 @@ legend {
     gap: 20px;
   }
 }
+.c_flex__second {
+  display: flex;
+  gap: 0px;
+  justify-content: start;
+  margin: 0;
+}
+@media (max-width: 999px) {
+  .c_flex__sp {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+  }
+}
 
 .l_header__mainTitle {
   margin: 30px 50px;
   font-size: 48px;
   font-size: 3rem;
+  color: #0d1c29;
 }
 
-.c_nav {
+@media (max-width: 999px) {
+  .c_nav {
+    display: none;
+  }
+  body.is-openMenu .l_header__mainTitle {
+    color: #fff;
+    z-index: 3000;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  body.is-openMenu .c_nav {
+    position: fixed;
+    background-color: #D9D9D9;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 500;
+  }
+  body.is-openMenu .c_nav__itemLink {
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+}
+@media (min-width: 1000px) {
+  .c_nav {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    z-index: 2000;
+  }
+  .c_nav__item {
+    text-align: right;
+    font-size: 16px;
+    font-size: 1rem;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+  .c_nav__circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #0d1c29;
+    margin: 10px;
+    vertical-align: middle;
+  }
+  .c_nav__circle:hover {
+    background-color: #0d1c29;
+  }
+}
+
+.c_hamburger {
   position: fixed;
-  top: 50px;
-  right: 10px;
-  z-index: 2000;
+  top: 0px;
+  right: 0px;
+  border: none;
+  width: 80px;
+  height: 80px;
+  z-index: 600;
+  right: 0;
 }
-.c_nav__item {
-  text-align: right;
+.c_hamburger__btn {
+  position: relative;
+  width: 40px;
+  height: 3px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s;
 }
-.c_nav__circle {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 2px solid #0d1c29;
-  margin: 10px;
-  vertical-align: middle;
+.c_hamburger__btn::before, .c_hamburger__btn::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s;
 }
-.c_nav__circle:hover {
-  background-color: #0d1c29;
+.c_hamburger__btn::before {
+  top: 10px;
+}
+.c_hamburger__btn::after {
+  top: -10px;
+}
+body.is-openMenu .c_hamburger {
+  z-index: 1000;
+}
+body.is-openMenu .c_hamburger__btn {
+  background-color: transparent;
+}
+body.is-openMenu .c_hamburger__btn::before, body.is-openMenu .c_hamburger__btn::after {
+  background-color: #fff;
+  border-radius: 30px;
+  top: 0;
+}
+body.is-openMenu .c_hamburger__btn::before {
+  rotate: 45deg;
+}
+body.is-openMenu .c_hamburger__btn::after {
+  rotate: -45deg;
 }
 
-.swiper-slide {
-  width: 30%;
-  height: auto;
+@media (min-width: 1000px) {
+  .c_hamburger {
+    display: none;
+  }
 }
 
 .swiper-wrapper {
   transition-timing-function: linear;
-  display: flex;
+  margin-top: 100px;
+}
+.swiper-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .horizon_tab {
@@ -339,9 +456,6 @@ legend {
   margin: 0 auto 10px;
   margin-bottom: 10px;
 }
-.l_section__textContainer dt {
-  margin-bottom: 5px;
-}
 .l_section__textContainer dd {
   line-height: 1.5rem;
 }
@@ -421,9 +535,6 @@ legend {
   margin: 0 auto 10px;
   margin-bottom: 10px;
 }
-.l_keioSection__textContainer dt {
-  margin-bottom: 5px;
-}
 .l_keioSection__textContainer dd {
   line-height: 1.5rem;
 }
@@ -443,9 +554,9 @@ legend {
     margin-top: 200px;
     text-align: left;
   }
-}
-
-@media (min-width: 1000px) {
+  .c_fixed__topSpace-nappa {
+    margin-top: 170px;
+  }
   .c_fixed__topSpace-keio {
     margin-top: 200px;
   }
@@ -458,6 +569,35 @@ legend {
 .c_othersPageImg__item {
   border-radius: 10px;
   border: 2px solid #D9D9D9;
+}
+
+@media (min-width: 1000px) {
+  .e_text__scroll {
+    font-size: 16px;
+    height: 350px;
+    /* スクロール範囲の高さを指定 */
+    overflow-y: scroll;
+    /* 垂直方向のスクロールを有効にする */
+  }
+}
+
+@media (max-width: 999px) {
+  .c_section__aboutImg {
+    display: block;
+    margin: 0 auto;
+  }
+  .c_section__profileList {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.c_list {
+  margin-top: 2pxx;
+  margin-bottom: 2px;
+}
+.c_list__text {
+  line-height: 1.5rem;
 }
 
 .fadeIn {
