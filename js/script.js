@@ -1,6 +1,6 @@
 //swiper
 const swiper = new Swiper('.swiper', {
-    slidesPerView: 6,
+    slidesPerView: 3,
     loop: true,
     speed: 5000,
     allowTouchMove: true,
@@ -8,6 +8,15 @@ const swiper = new Swiper('.swiper', {
         delay: 0,
         disableOnInteraction: false,
     },
+    breakpoints: {
+      // スライドの表示枚数：500px以上の場合
+      500: {
+        slidesPerView: 4,
+      },
+      1000: {
+        slidesPerView: 6,
+      }
+    }
 });
 
 //タブデザイン

@@ -203,6 +203,7 @@ legend {
     font-size: 20px;
     font-size: 1.25rem;
     font-family: "Noto Sans JP", sans-serif;
+    text-transform: uppercase;
   }
 }
 @media (min-width: 1000px) {
@@ -434,6 +435,11 @@ body.is-openMenu .c_hamburger__btn::after {
   bottom: 0;
   text-align: center;
   margin: 20px 0 30px 0;
+}
+@media (max-width: 999px) {
+  .c_copyright {
+    position: static;
+  }
 }
 
 .l_section {
