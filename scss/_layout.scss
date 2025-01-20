@@ -213,6 +213,9 @@
 //swiper
 
 .swiper-wrapper {
+    @include touch {
+        margin-top: 30px;
+    }
     transition-timing-function: linear;
     margin-top: 100px;
 
@@ -410,7 +413,7 @@
 
         img {
             display: block;
-            margin: 0 auto;
+            margin: 0 auto 10px;
 
             width: 50%;
             min-width: 300px;
@@ -534,6 +537,7 @@
 
 //個別ページの画像
 .c_othersPageImg__item {
+    display: block;
     border-radius: 10px;
     border: 2px solid $gray;
 }

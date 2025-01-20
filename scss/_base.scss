@@ -37,10 +37,27 @@ h3 {
   margin-bottom: 15px;
 }
 
+.l_subTitle{
+  @include touch{
+  width: 50%;
+  min-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+}
 
 
 .c_section__text {
   line-height: 1.5rem;
+}
+
+//改行
+.hidden-pc {
+  display: block;
+
+  @include desktop {
+    display: none;
+  }
 }
 
 //text center
