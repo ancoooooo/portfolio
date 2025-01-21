@@ -29,12 +29,32 @@ h1 {
 
 
 //h2設定
-h2,
-h3 {
+h2 {
   @include font-webfont_noto;
   @include fz(32);
   text-align: center;
   margin-bottom: 15px;
+}
+
+h3{
+@include touch{
+  text-align: center;
+  @include fz(16);
+}
+
+  @include font-webfont_noto;
+  @include fz(20);
+  text-align: left;
+  margin-bottom: 15px;
+  // &::before,&::after{
+  //   content: '';
+  //   width: 10px;
+  //   height: 2px;
+  //   background-color: $black;
+  //   display: inline-block;
+  //   margin: 0 10px;
+  //   vertical-align: middle;
+  // }
 }
 
 .l_subTitle{
@@ -164,3 +184,4 @@ fieldset {
 legend {
   display: none;
 }
+

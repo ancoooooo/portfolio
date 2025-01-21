@@ -25,13 +25,27 @@ h1 {
   font-weight: bold;
 }
 
-h2,
-h3 {
+h2 {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 32px;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 15px;
+}
+
+h3 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 15px;
+}
+@media (max-width: 999px) {
+  h3 {
+    text-align: center;
+    font-size: 16px;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 999px) {
@@ -180,6 +194,19 @@ legend {
     align-items: center;
     gap: 10px;
   }
+}
+
+.c_content__center li {
+  text-align: left;
+  margin-bottom: 10px;
+}
+@media (max-width: 999px) {
+  .c_content__center li {
+    text-align: center;
+  }
+}
+.c_content__center li:last-child {
+  margin-bottom: 20px;
 }
 
 .l_header__mainTitle {
@@ -382,7 +409,7 @@ body.is-openMenu .c_hamburger__btn::after {
   text-decoration: none;
 }
 .horizon_tab--item--btn:hover {
-  text-decoration: underline;
+  opacity: 0.5;
 }
 .horizon_tab--item--btn:visited {
   color: #666;
@@ -418,6 +445,10 @@ body.is-openMenu .c_hamburger__btn::after {
   margin: 0 auto;
 }
 
+.content_container {
+  margin-bottom: 50px;
+}
+
 .c_illust__relative {
   position: relative;
   display: block;
@@ -448,6 +479,18 @@ body.is-openMenu .c_hamburger__btn::after {
 .c_illust__mask:hover {
   opacity: 1;
   /* マスクを表示する */
+}
+
+.c_illust__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* 絶対位置指定 */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .c_copyright {
@@ -628,6 +671,57 @@ body.is-openMenu .c_hamburger__btn::after {
 }
 .c_list__text {
   line-height: 1.5rem;
+}
+
+.accordion {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.accordion-header {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.accordion-header::before,
+.accordion-header::after {
+  content: "";
+  position: absolute;
+  background-color: #333;
+  transition: all 0.3s;
+}
+
+.accordion-header::before, .accordion-header::after {
+  width: 2px;
+  height: 10px;
+  right: 15px;
+  top: 15px;
+}
+
+.accordion-header::after {
+  rotate: 90deg;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  background-color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.accordion-content li {
+  margin-bottom: 10px;
+}
+
+.accordion-content:last-child {
+  border-bottom: none;
+}
+
+.accordion-header.active::before,
+.accordion-header.active::after {
+  transform: rotate(-45deg);
 }
 
 .fadeIn {

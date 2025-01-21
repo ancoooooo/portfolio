@@ -31,7 +31,7 @@
         margin: 0;
     }
 
-    &__sp{
+    &__sp {
         @include touch {
             display: grid;
             grid-template-columns: 1fr 3fr;
@@ -42,6 +42,19 @@
     }
 
 
+}
+
+.c_content__center li {
+    @include touch {
+        text-align: center;
+    }
+
+    text-align:left;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 20px;
+    }
 }
 
 
@@ -216,6 +229,7 @@
     @include touch {
         margin-top: 30px;
     }
+
     transition-timing-function: linear;
     margin-top: 100px;
 
@@ -284,7 +298,7 @@
     text-decoration: none;
 
     &:hover {
-        text-decoration: underline;
+        opacity: 0.5;
     }
 
     &:visited {
@@ -326,6 +340,10 @@
     margin: 0 auto;
 }
 
+.content_container{
+    margin-bottom: 50px;
+}
+
 //illust 説明マスク
 .c_illust__relative {
     position: relative;
@@ -360,6 +378,18 @@
     /* マスクを表示する */
 }
 
+.c_illust__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* 絶対位置指定 */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 //コピーライト
 .c_copyright {
     display: block;
@@ -370,7 +400,7 @@
     text-align: center;
     margin: 20px 0 30px 0;
 
-    @include touch{
+    @include touch {
         position: static;
     }
 }
@@ -576,4 +606,58 @@
     &__text {
         line-height: 1.5rem;
     }
+}
+
+
+// アコーディオン
+.accordion {
+
+    width: 70%;
+    margin: 20px auto;
+}
+
+.accordion-header {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.accordion-header::before,
+.accordion-header::after {
+    content: '';
+    position: absolute;
+    background-color: #333;
+    transition: all 0.3s;
+}
+
+.accordion-header::before,.accordion-header::after {
+    width: 2px;
+    height: 10px;
+    right: 15px;
+    top: 15px;
+}
+
+.accordion-header::after {
+    rotate: 90deg;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    @include font-webfont_noto;
+}
+
+.accordion-content li{
+    margin-bottom: 10px;
+}
+
+.accordion-content:last-child {
+    border-bottom: none;
+}
+
+.accordion-header.active::before,
+.accordion-header.active::after {
+    transform: rotate(-45deg);
 }
