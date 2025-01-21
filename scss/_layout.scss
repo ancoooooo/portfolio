@@ -340,7 +340,7 @@
     margin: 0 auto;
 }
 
-.content_container{
+.content_container {
     margin-bottom: 50px;
 }
 
@@ -586,6 +586,10 @@
 //aboutページ
 
 .c_section {
+    &__profileList {
+        margin-top: 20px;
+    }
+
     @include touch {
         &__aboutImg {
             display: block;
@@ -594,7 +598,7 @@
 
         &__profileList {
             width: 80%;
-            margin: 0 auto;
+            margin: 20px auto;
         }
     }
 }
@@ -631,7 +635,8 @@
     transition: all 0.3s;
 }
 
-.accordion-header::before,.accordion-header::after {
+.accordion-header::before,
+.accordion-header::after {
     width: 2px;
     height: 10px;
     right: 15px;
@@ -649,7 +654,7 @@
     @include font-webfont_noto;
 }
 
-.accordion-content li{
+.accordion-content li {
     margin-bottom: 10px;
 }
 
