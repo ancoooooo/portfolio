@@ -353,6 +353,7 @@ body.is-openMenu .c_hamburger__btn::after {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  aspect-ratio: 1/1;
 }
 
 .horizon_tab {
@@ -444,6 +445,13 @@ body.is-openMenu .c_hamburger__btn::after {
   width: 90%;
   margin: 0 auto;
 }
+.c_works__grid img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+}
 
 .content_container {
   margin-bottom: 50px;
@@ -511,12 +519,10 @@ body.is-openMenu .c_hamburger__btn::after {
 .l_section {
   margin: 0 auto;
 }
-.l_section__text {
-  padding-right: 20px;
-}
 @media (min-width: 1000px) {
   .l_section__text {
     height: 100vh;
+    overflow: auto;
   }
 }
 .l_section__textList {
@@ -526,7 +532,6 @@ body.is-openMenu .c_hamburger__btn::after {
 }
 .l_section__textContainer {
   margin: 0 auto 10px;
-  margin-bottom: 10px;
 }
 .l_section__textContainer dd {
   line-height: 1.5rem;
@@ -545,19 +550,24 @@ body.is-openMenu .c_hamburger__btn::after {
 }
 @media (min-width: 1000px) {
   .l_section {
-    width: 1200px;
-    display: flex;
+    width: 1100px;
+    display: grid;
+    grid-template-columns: 30vw 35vw;
+    -moz-column-gap: 3vw;
+         column-gap: 3vw;
   }
 }
-@media screen and (min-width: 1000px) and (min-width: 1000px) and (max-width: 1200px) {
+@media screen and (min-width: 1000px) and (min-width: 1000px) and (max-width: 1400px) {
   .l_section {
     width: 800px;
+    grid-template-columns: 400px 35vw;
   }
 }
 @media (min-width: 1000px) {
   .l_section__text {
     position: fixed;
-    width: 25vw;
+    width: 30vw;
+    min-width: 400px;
     height: 100vh;
   }
   .l_section__textList {
@@ -567,24 +577,34 @@ body.is-openMenu .c_hamburger__btn::after {
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 20px;
-    margin: 0 auto 15px;
+    margin: 0 auto 7px;
     width: 30vw;
     min-width: none;
   }
   .l_section__img {
-    width: 600px;
+    margin-left: 3vw;
+    width: 35vw;
   }
   .l_section__img img {
     display: block;
-    margin-left: 33vw;
-    width: 60vw;
-    max-width: 600px;
+    margin-left: 30vw;
+    width: 35vw;
+    min-width: 350px;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1000px) and (max-width: 1300px) {
+  .l_section__img img {
+    margin-left: 400px;
   }
 }
 
 .c_border {
   border: 2px solid #D9D9D9;
   border-radius: 5px;
+}
+
+.e_marginBottom {
+  margin-bottom: 50px;
 }
 
 .c_keioImg {
@@ -647,9 +667,9 @@ body.is-openMenu .c_hamburger__btn::after {
 @media (min-width: 1000px) {
   .e_text__scroll {
     font-size: 16px;
-    height: 350px;
+    height: 30vh;
     /* スクロール範囲の高さを指定 */
-    overflow-y: scroll;
+    overflow-y: auto;
     /* 垂直方向のスクロールを有効にする */
   }
 }
@@ -726,6 +746,66 @@ body.is-openMenu .c_hamburger__btn::after {
 .accordion-header.active::before,
 .accordion-header.active::after {
   transform: rotate(-45deg);
+}
+
+.pagetop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 500;
+}
+.pagetop a {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  display: block;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 10px 0px 10px;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+@media (min-width: 1000px) {
+  .pagetop a {
+    padding: 10px 10px 13px 10px;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+  }
+}
+.pagetop a:hover {
+  display: block;
+  background-color: #fff;
+  text-align: center;
+  color: #ccc;
+  font-size: 20px;
+}
+@media (min-width: 1000px) {
+  .pagetop a:hover {
+    font-size: 25px;
+    padding: 10px 10px 13px 10px;
+  }
+}
+.pagetop span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-top: #fff 4px solid;
+  border-left: #fff 4px solid;
+  transform: rotate(45deg);
+  margin: 13px auto;
+  border-radius: 3px;
+}
+.pagetop span:hover {
+  border-top: #D9D9D9 4px solid;
+  border-left: #D9D9D9 4px solid;
 }
 
 .fadeIn {

@@ -175,3 +175,19 @@ if ($('.' + tabSwitchTab).length) {
     }
   });
 }
+
+//pagetop
+$(document).ready(function () {
+  let pagetop = $('.pagetop');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {  //100を通過するとスクロールトップが表示される
+      pagetop.fadeIn();
+    } else {
+      pagetop.fadeOut();
+    }
+  });
+  pagetop.click(function () {
+    $('body, html').animate({ scrollTop: 0 }, 500);　　//500はスクロール速度
+    return false;
+  });
+});

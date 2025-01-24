@@ -2,9 +2,6 @@
 @use './mixin' as *;
 
 //全体設定
-
-
-
 .e_imgSize300 {
     width: 300px;
     height: auto;
@@ -237,6 +234,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        aspect-ratio: 1 / 1;
     }
 }
 
@@ -338,6 +336,13 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 90%;
     margin: 0 auto;
+
+    img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+    }
 }
 
 .content_container {
@@ -411,10 +416,10 @@
 
 
     &__text {
-        padding-right: 20px;
 
         @include desktop {
             height: 100vh;
+            overflow: auto;
         }
 
         &List {
@@ -425,7 +430,6 @@
 
         &Container {
             margin: 0 auto 10px;
-            margin-bottom: 10px;
 
             dd {
                 line-height: 1.5rem;
@@ -451,17 +455,21 @@
     }
 
     @include desktop {
-        width: 1200px;
-        display: flex;
+        width: 1100px;
+        display: grid;
+        grid-template-columns: 30vw 35vw;
+        column-gap: 3vw;
 
-        @media screen and (min-width: 1000px) and (max-width: 1200px) {
+        @media screen and (min-width: 1000px) and (max-width: 1400px) {
             width: 800px;
+            grid-template-columns: 400px 35vw;
         }
 
 
         &__text {
             position: fixed;
-            width: 25vw;
+            width: 30vw;
+            min-width: 400px;
             height: 100vh;
 
             &List {
@@ -472,7 +480,7 @@
                 display: grid;
                 grid-template-columns: 1fr 3fr;
                 gap: 20px;
-                margin: 0 auto 15px;
+                margin: 0 auto 7px;
                 width: 30vw;
                 min-width: none;
             }
@@ -480,13 +488,18 @@
         }
 
         &__img {
-            width: 600px;
+            // width: 600px;
+            margin-left: 3vw;
+            width: 35vw;
 
             img {
                 display: block;
-                margin-left: 33vw;
-                width: 60vw;
-                max-width: 600px;
+                margin-left: 30vw;
+                width: 35vw;
+                min-width: 350px;
+                @media screen and (min-width: 1000px) and (max-width: 1300px) {
+                    margin-left: 400px;
+                }
             }
         }
     }
@@ -495,6 +508,10 @@
 .c_border {
     border: 2px solid $gray;
     border-radius: 5px;
+}
+
+.e_marginBottom{
+    margin-bottom: 50px;
 }
 
 
@@ -572,13 +589,13 @@
     border: 2px solid $gray;
 }
 
-//nappaのテキストスクロール
+//nappa,ancodesignのテキストスクロール
 .e_text__scroll {
     @include desktop {
         font-size: 16px;
-        height: 350px;
+        height: 30vh;
         /* スクロール範囲の高さを指定 */
-        overflow-y: scroll;
+        overflow-y: auto;
         /* 垂直方向のスクロールを有効にする */
     }
 }
@@ -665,4 +682,75 @@
 .accordion-header.active::before,
 .accordion-header.active::after {
     transform: rotate(-45deg);
+}
+
+//pagetop
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 500;
+
+
+    a {
+        width: 50px;
+        height: 50px;
+
+
+        font-size: 20px;
+        column-gap: 10px;
+
+        display: block;
+        border-radius: 10px;
+        background-color: #d9d9d9;
+        text-align: center;
+        color: $white;
+        text-decoration: none;
+        padding: 4px 10px 0px 10px;
+
+        filter: alpha(opacity=50);
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+
+        @include desktop {
+            padding: 10px 10px 13px 10px;
+            width: 60px;
+            height: 60px;
+            font-size: 25px;
+
+
+        }
+
+        &:hover {
+            display: block;
+            background-color: $white;
+            text-align: center;
+            color: #ccc;
+            font-size: 20px;
+
+
+            @include desktop {
+                font-size: 25px;
+                padding: 10px 10px 13px 10px;
+
+            }
+        }
+    }
+
+    span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-top: $white 4px solid;
+        border-left: $white 4px solid;
+        transform: rotate(45deg);
+        margin: 13px auto;
+        border-radius: 3px;
+
+        &:hover {
+            border-top: $gray 4px solid;
+            border-left: $gray 4px solid;
+        }
+    }
 }
